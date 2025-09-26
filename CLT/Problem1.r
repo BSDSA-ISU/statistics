@@ -6,7 +6,6 @@ taken from this population.
 the sample mean?
 2. b) What is the probability that the sample mean is greater than 74? Assume the
 sample means are normally distributed.
-
 ")
 
 sample2 <- 74
@@ -16,9 +15,9 @@ sample <- 50
 
 ox <- 15 / sqrt(sample)
 
-Z <- (sample2 - mean) / ox
+z <- (sample2 - mean) / ox
 
-zscore <- pnorm(round(Z, 2))
+zscore <- pnorm(round(z, 2))
 
 Z
 

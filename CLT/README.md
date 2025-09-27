@@ -84,9 +84,9 @@ Solution:
 - **Step 2.** Find the probabilities corresponding to these Z-scores.
 Using a standard normal distribution table or calculator:
 
-  - o The probability corresponding to **Z=−1.6** is approximately **0.0548.**
+  - The probability corresponding to **Z=−1.6** is approximately **0.0548.**
 
-  - o The probability corresponding to **Z=1.6** is approximately **0.9452.**
+  - The probability corresponding to **Z=1.6** is approximately **0.9452.**
 
 - **Step 3**. Find the probability that the sample mean is between **115 and 125**.
 
@@ -115,7 +115,7 @@ Using a standard normal distribution table or calculator:
 
     - ![a](./images/problem3-2.png)
 
-  - **Step 3v. Find the probability that the sample mean is **more than 520**.
+  - **Step 3. Find the probability that the sample mean is **more than 520**.
 
 - Using a standard normal distribution table:
 

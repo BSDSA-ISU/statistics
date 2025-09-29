@@ -18,7 +18,7 @@ distribution of the sample mean is equal to the mean of the population (μ):
 deviation of the sampling distribution of the sample mean, also known as the
 standard error μx̄ , is given by:
 
-  - ![Alt Text](./images/Sampling-Distribution-Formula.jpg)
+- ## $σ = \frac{σ}{\sqrt{n}}$
 
 - Where:
   - **σ** is the population standard deviation.
@@ -32,16 +32,16 @@ standard error μx̄ , is given by:
 - **Step 1. Find the Z-score**
 The Z-score for the sample mean can be calculated using the formula:
 
-  - ![Alt Text](./images/Z-score-formula.webp)
+- ## $Z = \frac{x = \mu}{σ}.$
 
-  - Where:
+- Where:
   - **x** is the sample mean (74 in this case).
   - **μ** is the mean of the sampling distribution (70).
   - **o** is the standard deviation of the sampling distribution (2.12).
 
 - Plugging in the values:
-
-  - ![text](./images/zscore.png)
+  
+  - ## $Z = \frac{74 - 70}{2.12} \approx \frac{4}{2.12} \approx 1.89$
 
   - **Step 2. Find the Probability**
     - The probability that the sample mean is greater than **74** is the area under the standard normal curve to the right of the **Z-score 1.89.**
@@ -49,6 +49,7 @@ The Z-score for the sample mean can be calculated using the formula:
 corresponding to a **Z-score of 1.89 is approximately 0.9706.**
     - Therefore, the probability to the right of this Z-score is:
     - **P(X̅>74)=1−0.9706=0.0294** or **2.94%**
+    - $P( > 74) = 1 - 0.9706 = 0.294 \ or \ 2.94 \% .$
 
 - Conclusion:
   - **The probability that the sample mean is greater than 74 is approximately 0.0294 or
@@ -75,11 +76,11 @@ Solution:
 
 - For x̄ 115:
 
-  - ![z](./images/zscore2.png)
+  - ## $Z = \frac{115 - 120}{3.125} = \frac{-5}{3.125} \approx -1.6$
 
 - For x̄ 125:
 
-  - ![z](./images/zscore3.png)
+  - ## $Z = \frac{125 - 120}{3.125} = \frac{5}{3.125} \approx 1.6$
 
 - **Step 2.** Find the probabilities corresponding to these Z-scores.
 Using a standard normal distribution table or calculator:
@@ -90,7 +91,7 @@ Using a standard normal distribution table or calculator:
 
 - **Step 3**. Find the probability that the sample mean is between **115 and 125**.
 
-  - ![a](./images/step3.png)
+  - $P(115 < X < 125) = P(Z < 1.6) - P(Z < -1.6) = 0.9452 - 0.0548 = 0.8904$
 
 - Conclusion:
   - The probability that the sample mean will be between **115 and 125** is **0.8904** or **89.04%**
@@ -109,11 +110,12 @@ Using a standard normal distribution table or calculator:
 - Part (a): Probability that the Sample Mean is More Than **520**
   - **Step 1**. Find the mean and standard deviation of the sampling distribution.
 
-    - ![a](./images/problem3-1.png)
+    - $\mu x = 500, ox = \frac{100}{\sqrt{36}} = \frac{100}{6} \approx16.67 .$
 
   - **Step 2**. Calculate the Z-score for **x̄=520**.
 
     - ![a](./images/problem3-2.png)
+    - $Z = \frac{520 - 500}{16.67} \approx \frac{20}{16.67} \approx 1.2$
 
   - **Step 3. Find the probability that the sample mean is **more than 520**.
 
@@ -122,7 +124,7 @@ Using a standard normal distribution table or calculator:
   - The probability corresponding to **Z=1.2** is approximately **0.8849.**
   - So, the probability to the right **(more than 520)** is:
 
-    - ![a](./images/problem3-2.1.png)
+    - $P(X > 520) = 1 - 0.8849 = 0.1151$
 
 - Conclusion:
   - The probability that the sample mean score is more than **520** is **0.1151** or **11.51%.**
@@ -130,9 +132,9 @@ Using a standard normal distribution table or calculator:
 - Part (b): Probability that the Sample Mean is Less than **480**
 
   - **Step 1**. Calculate the Z-score for **x̄ =480**.
-  
-    - ![a](./images/problem3-3.png)
-  
+
+    - $Z = \frac{480 - 500}{16.67} \approx \frac{-20}{16.67} \approx -1.2$
+
   - **Step 2**. Find the probability that the sample mean is less than **480**.
 
 - Using the standard normal distribution table:

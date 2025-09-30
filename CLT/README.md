@@ -18,37 +18,38 @@ distribution of the sample mean is equal to the mean of the population (μ):
 deviation of the sampling distribution of the sample mean, also known as the
 standard error μx̄ , is given by:
 
-- ## $σ = \frac{σ}{\sqrt{n}}$
+- ## $σ_{\bar{x}} = \frac{σ}{\sqrt{n}}$
 
 - Where:
   - **σ** is the population standard deviation.
   - **n** is the sample size.
 
 - **Plugging in the values:**
-  - So, the standard deviation (standard error) of the sampling distribution is:
-  - approximately **2.12.**
-- Part (b): Probability that the Sample Mean is Greater than **74**
+  - $\sigma_{\bar{x}} = \frac{15}{\sqrt{50}} \approx 2.12$
 
-- **Step 1. Find the Z-score**
+- So, the standard deviation (standard error) of the sampling distribution is:
+- approximately **2.12.**
+  - Part (b): Probability that the Sample Mean is Greater than **74**
+
+    - **Step 1. Find the Z-score**
 The Z-score for the sample mean can be calculated using the formula:
 
-- ## $Z = \frac{x = \mu}{σ}.$
+      - ## $Z = \frac{x = \mu_{\bar{x}}}{σ_{\bar{x}}}$
 
-- Where:
-  - **x** is the sample mean (74 in this case).
-  - **μ** is the mean of the sampling distribution (70).
-  - **o** is the standard deviation of the sampling distribution (2.12).
+  - Where:
+    - **$\bar{x}$** is the sample mean (74 in this case).
+    - **$\bar{\mu}_{\bar{x}}$** is the mean of the sampling distribution (70).
+    - **$\sigma$** is the standard deviation of the sampling distribution (2.12).
 
-- Plugging in the values:
+  - Plugging in the values:
   
-  - ## $Z = \frac{74 - 70}{2.12} \approx \frac{4}{2.12} \approx 1.89$
+    - $Z = \frac{74 - 70}{2.12} \approx \frac{4}{2.12} \approx 1.89$
 
   - **Step 2. Find the Probability**
     - The probability that the sample mean is greater than **74** is the area under the standard normal curve to the right of the **Z-score 1.89.**
-    - Using a standard normal distribution table or a calculator, the probability
+      - Using a standard normal distribution table or a calculator, the probability
 corresponding to a **Z-score of 1.89 is approximately 0.9706.**
     - Therefore, the probability to the right of this Z-score is:
-    - **P(X̅>74)=1−0.9706=0.0294** or **2.94%**
     - $P( > 74) = 1 - 0.9706 = 0.294 \ or \ 2.94 \% .$
 
 - Conclusion:
@@ -91,7 +92,7 @@ Using a standard normal distribution table or calculator:
 
 - **Step 3**. Find the probability that the sample mean is between **115 and 125**.
 
-  - $P(115 < X < 125) = P(Z < 1.6) - P(Z < -1.6) = 0.9452 - 0.0548 = 0.8904$
+  - $P(115 < \bar{X} < 125) = P(Z < 1.6) - P(Z < -1.6) = 0.9452 - 0.0548 = 0.8904$
 
 - Conclusion:
   - The probability that the sample mean will be between **115 and 125** is **0.8904** or **89.04%**
@@ -110,11 +111,10 @@ Using a standard normal distribution table or calculator:
 - Part (a): Probability that the Sample Mean is More Than **520**
   - **Step 1**. Find the mean and standard deviation of the sampling distribution.
 
-    - $\mu x = 500, ox = \frac{100}{\sqrt{36}} = \frac{100}{6} \approx16.67 .$
+    - $\mu_{\bar{x}} = 500, \sigma_{\bar{x}} = \frac{100}{\sqrt{36}} = \frac{100}{6} \approx 16.67$
 
   - **Step 2**. Calculate the Z-score for **x̄=520**.
 
-    - ![a](./images/problem3-2.png)
     - $Z = \frac{520 - 500}{16.67} \approx \frac{20}{16.67} \approx 1.2$
 
   - **Step 3. Find the probability that the sample mean is **more than 520**.
@@ -124,7 +124,7 @@ Using a standard normal distribution table or calculator:
   - The probability corresponding to **Z=1.2** is approximately **0.8849.**
   - So, the probability to the right **(more than 520)** is:
 
-    - $P(X > 520) = 1 - 0.8849 = 0.1151$
+    - $P(\bar{X} > 520) = 1 - 0.8849 = 0.1151$
 
 - Conclusion:
   - The probability that the sample mean score is more than **520** is **0.1151** or **11.51%.**

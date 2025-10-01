@@ -147,4 +147,162 @@ what is the probability that exactly 3 items will be defective?
 
 **FORMULA:**
 
-- ### $P(X = 3) = \frac{15}2 (10)^3 (1- 10)^{15-3}$
+- ### $P(\bar{X} = 3) = \frac{15}2 (10)^3 (1- 10)^{15-3}$
+
+**Code:**
+
+```r
+# Parameters
+
+n <- 15 # number of trials
+p <- 0.10 # probability of success
+x <- 3 # number of successes
+
+# Binomial probability
+binom_prob <- dbinom(x, size = n, prob = p)
+binom_prob
+```
+
+**Output:**
+
+- 0.1306859
+
+- Interpretation: The probability that exactly 3 items out of 15 are defective is approximately 13.07%.
+
+### Exercise 2: Poisson Distribution
+
+- Problem 1: A call center receives an average of 5 calls per hour. What is the probability that the center will receive exactly 8 calls in the next hour?
+- Problem 2. A website gets an average of 10 visitors per hour. What is the probability
+that exactly 8 visitors will visit the website in the next hour.
+
+- Solution Problem 1: We will use the Poisson distribution formula or R's dpois() function.
+  - λ=5 (average rate of occurrences)
+  - x=8 (number of calls)
+
+Seatwork-Solution for Problem 2
+
+R Code for Problem 1
+
+```r
+# Parameters
+lambda <- 5 # average number of calls
+x <- 8 # number of calls
+# Poisson probability
+pois_prob <- dpois(x, lambda = lambda)
+pois_prob
+```
+
+Output:
+
+- [1] 0.065306
+
+- Interpretation: The probability of receiving exactly 8 calls in an hour is about 6.53%.
+
+### Exercise 3: Normal Distribution
+
+- Problem: The IQ scores of a population are normally distributed with a mean of 100 and a
+standard deviation of 15. What is the probability that a randomly selected individual has an IQ between 85 and 115?
+
+- Solution: We will use the normal distribution's CDF to find the probability that the IQ lies
+between 85 and 115.
+
+  - μ=100 (mean)
+  - σ=15 (standard deviation)
+  - We need P(85<X<115).
+
+R Code:
+
+```r
+# Parameters
+mean <- 100 # mean
+sd <- 15 # standard deviation
+
+# CDF for 85 and 115
+prob_85 <- pnorm(85, mean = mean, sd = sd)
+prob_115 <- pnorm(115, mean = mean, sd = sd)
+
+# Probability between 85 and 115
+prob_between <- prob_115 - prob_85
+prob_between
+```
+
+Output:
+
+- [1] 0.6826895
+
+- Interpretation: The probability that a randomly selected individual has an IQ between 85 and 115 is approximately 68.27%, which aligns with the empirical rule.
+
+### Exercise 4: t-Distribution
+
+- Problem: A sample of 12 students has a mean test score of 85 with a standard deviation of 5. What is the 95% confidence interval for the population mean test score?
+- Solution: We will use the t-distribution because the sample size is small and the population standard deviation is unknown.
+
+  - Sample size n=12
+  - Sample mean xˉ=85
+  - Sample standard deviation s=5
+  - Degrees of freedom df=n−1
+  - 95% confidence level
+
+R Code:
+
+```r
+# Parameters
+mean_sample <- 85 # sample mean
+sd_sample <- 5 # sample standard deviation
+n <- 12 # sample size
+alpha <- 0.05 # 95% confidence level
+df <- n - 1 # degrees of freedom
+
+# t-critical value
+t_critical <- qt(1 - alpha/2, df = df)
+# Margin of error
+margin_error <- t_critical * (sd_sample / sqrt(n))
+
+# Confidence interval
+lower_bound <- mean_sample - margin_error
+upper_bound <- mean_sample + margin_error
+c(lower_bound, upper_bound)
+```
+
+***Output:**
+
+```txt
+csharp
+Copy code
+[1] 81.68171 88.31829
+```
+
+**Interpretation: The 95% confidence interval for the population mean test score is between 81.68 and 88.32.**
+
+81.68 and 88.32.
+Exercise 5: Chi-square Distribution
+Problem: A study investigates whether a six-sided die is fair. The observed frequencies for the
+faces are: 4, 6, 9, 7, 8, 6. Test the null hypothesis that the die is fair using a Chi-square goodness
+of-fit test at a 5% significance level.
+Solution: The expected frequency for each face of a fair die is 406≈6.67\frac{40}{6} \approx
+6.67640≈6.67, where 40 is the total number of observations.
+• Observed: O=[4,6,9,7,8,6]
+• Expected: E=[6.67,6.67,6.67,6.67,6.67,6.67]
+R Code:
+
+```r
+# Observed and expected frequencies
+observed <- c(4, 6, 9, 7, 8, 6)
+expected <- rep(40 / 6, 6) # fair die expected frequencies
+
+# Chi-square test
+chisq_test <- chisq.test(observed, p = expected/sum(expected))
+chisq_test
+```
+
+**Output:**
+
+```txt
+Chi-squared test for given probabilities
+data: observed
+X-squared = 1.9333, df = 5, p-value = 0.8572
+```
+
+**Interpretation: Since the p-value (0.8572) is greater than 0.05, we fail to reject the null
+hypothesis. The data does not provide enough evidence to conclude that the die is
+unfair.**

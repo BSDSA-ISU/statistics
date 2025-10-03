@@ -26,11 +26,14 @@ Example:
 Suppose you have the following sample data on the number of sales day for five
 days: **50,55,60,65,70.**
 
-**Sample Mean ($\bar{x}$)**=$\frac{50+55+60+65+70}{5}=60$
+**Sample Mean** ($\bar{x}$)**=
+$\frac{50+55+60+65+70}{5}=60$
 
-**Sample Proportion ($\hat{p}$)**=$\frac{(50-60)^2 + (55-60)^2 +(60-60)^2+(65-60)^2+(70-60)^2}{(5-1)}=62.5$
+**Sample Proportion** ($\hat{p}$)**=
+$\frac{(50-60)^2 + (55-60)^2 +(60-60)^2+(65-60)^2+(70-60)^2}{(5-1)}=62.5$
 
 **critical value** =
+
 $$
 t_{\text{crit, two-tailed}} = t_{1 - \frac{\alpha}{2}, \, df}
 $$
@@ -82,15 +85,15 @@ replacement to estimate the sampling distribution of a statistic.
 $$
 \begin{aligned}
 
-& \bar{X} \plusmn t_{a/2, n-1} * \frac{s}{\sqrt{n}} \\
+\bar{X} \plusmn t_{a/2, n-1} * \frac{s}{\sqrt{n}} \\
 
-& \text{Using } t_{0.025,4} = 2.776: CI \\
+\text{Using } t_{0.025,4} = 2.776: CI \\
 
-& 60 \plusmn 2.776 * \frac{8}{\sqrt{5}} \\
+60 \plusmn 2.776 * \frac{8}{\sqrt{5}} \\
 
-& 60 \plusmn 9.9 \\
+60 \plusmn 9.9 \\
 
-& \underline{[ 50.1, 69.9 ]}
+\underline{[ 50.1, 69.9 ]}
 \end{aligned}
 $$
 

@@ -147,7 +147,7 @@ Example 1. For a dataset of coin flips with heads(H) occurring 40 times out of
 p)60 Maximizing the likelihood: log L(p)=40 log p + 60 log (1-p) Differentiating
 and solving: $\hat{p} = \frac{40}{100} = 0.4$
 
-**R Code**
+**R Code**:
 
 ```r
 # Coin flip data (40 heads out of 100 flips)

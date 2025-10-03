@@ -99,10 +99,13 @@ of fit.
 
 **PDF:**
 
-- $
-f(x) = \frac{1}{2^{k - 2}\Gamma(k / 2)}^{x^{k/2 -1}\ell^{-x / 2}} for x > 0, \\
-0 for x <= 0.
-$
+$$
+f(x) =
+\begin{cases}
+\dfrac{1}{2^{k - 2}\,\Gamma(k / 2)} \, x^{k/2 - 1} \, e^{-x/2}, & x > 0 \\
+0, & x \leq 0
+\end{cases}
+$$
 
 Where:
 

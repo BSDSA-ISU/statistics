@@ -203,9 +203,11 @@ or just: $\sigma^2 = \frac{1}{n} \sum^n_{i=1} (X_i - \hat{\mu})^2.$
 # Sample data
 data <- c(4.5, 5.1, 4.9, 5.2, 5.0)
 
-# MLE for mean and variance
+# MLE for mean
 mle_mean <- mean(data)
-mle_variance <- var(data)
+
+# MLE for variance (divide by n instead of n-1)
+mle_variance <- var(data)  * (length(data)-1)/length(data)
 
 # print out the result
 mle_mean
@@ -222,8 +224,7 @@ $$
 
 \hat{\mu} = \frac{4.5 + 5.1 + 4.9 + 5.2 + 5.0}{5} \\
 \hat{\mu} = \frac{24.7}{5} \\
-\underline{\hat{\mu} = 4.94} \\
-\\
+\underline{\hat{\mu} = 4.94} \\ \\
 \text{now for } \sigma^2:\\
 \sigma^2 = \frac{(4.5 - 4.94)^2 (5.1 - 4.94)^2 (4.9 - 4.94)^2 (5.2 - 4.94)^2 (5.0 - 4.94)^2}{5} \\
 \sigma^2 = \frac{ 0.1936 + 0.0256 + 0.0016 + 0.0676 + 0.0036​}{5}\\

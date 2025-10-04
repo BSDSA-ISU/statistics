@@ -85,15 +85,12 @@ replacement to estimate the sampling distribution of a statistic.
 $$
 \begin{aligned}
 
-\bar{X} \plusmn t_{a/2, n-1} * \frac{s}{\sqrt{n}} \\
-
+\bar{X} \pm t_{a/2, n-1} * \frac{s}{\sqrt{n}} \\
 \text{Using } t_{0.025,4} = 2.776: CI \\
-
-60 \plusmn 2.776 * \frac{8}{\sqrt{5}} \\
-
-60 \plusmn 9.9 \\
-
+60 \pm 2.776 * \frac{8}{\sqrt{5}} \\
+60 \pm 9.9 \\
 \underline{[ 50.1, 69.9 ]}
+
 \end{aligned}
 $$
 
@@ -172,9 +169,7 @@ Differentiating with respect $\mu$ and setting it to 0: $\frac{d}{du} \ log \ L(
 
 **or just**:
 
-$\mu = \frac{\sum^n_{i=1} X_i}{n}$
-
-**for simpler one for god sake!**
+### $\hat{\mu} = \frac{\sum^n_{i=1} X_i}{n}$
 
 **R code**:
 
@@ -187,3 +182,38 @@ mean(data)
 ```
 
 **Example 2. Estimating Mean and Variance of a Normal Distribution**:
+
+**problem**:
+
+Given the data $X_1,X_2......,X_n ~ N(\mu, \sigma)^2$ estimate both the population mean $\mu$ and variance $\sigma$
+
+**Paper and pen solution**:
+
+Given the data: $L(\mu, \sigma^2; X_1, X_2,....,X_n) = \prod^n_{i=1} \frac{1}{\sqrt{2 \pi \sigma^2}} \ exp -\frac{(X_i - \mu)^2}{2 \sigma^2}$
+
+The likelihood function is: $Log \ L(\mu, \sigma^2) = -\frac{n}{2} log(2\pi \sigma^2) - \frac{1}{2\sigma^2} \sum^n_{i=1} (X_i - \mu)^2$
+
+maximizing the respect to $\mu$: $\hat{\mu}= \frac{1}{n} \sum^n_{i=1} X_i$
+
+Maximixing the respect of to $\sigma^2$: $\sigma^2 = \frac{1}{n} \sum^n_{i=1} (X_i - \hat{\mu})^2.$
+
+or just: $\sigma^2 = \frac{1}{n} \sum^n_{i=1} (X_i - \hat{\mu})^2.$
+
+**R code**:
+
+```r
+# Sample data
+data <- c(4.5, 5.1, 4.9, 5.2, 5.0)
+
+# MLE for mean and variance
+mle_mean <- mean(data)
+mle_variance <- var(data)
+
+# print out the result
+mle_mean
+mle_variance
+```
+
+**In latex/paper**:
+
+$\hat{\mu}$

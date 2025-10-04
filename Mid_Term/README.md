@@ -84,13 +84,11 @@ replacement to estimate the sampling distribution of a statistic.
 
 $$
 \begin{aligned}
-
 \bar{X} \pm t_{a/2, n-1} * \frac{s}{\sqrt{n}} \\
 \text{Using } t_{0.025,4} = 2.776: CI \\
 60 \pm 2.776 * \frac{8}{\sqrt{5}} \\
 60 \pm 9.9 \\
 \underline{[ 50.1, 69.9 ]}
-
 \end{aligned}
 $$
 

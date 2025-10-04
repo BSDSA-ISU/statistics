@@ -222,7 +222,7 @@ $$
 \text{First step is to get the mean:} \\
 \hat{\mu} = \frac{4.5 + 5.1 + 4.9 + 5.2 + 5.0}{5} \\
 \hat{\mu} = \frac{24.7}{5} \\
-\underline{\hat{\mu} = 4.94} \\
+\underline{\hat{\mu} = 4.94}
 \end{align}
 $$
 
@@ -233,7 +233,6 @@ $$
 \sigma^2 = \frac{ 0.1936 + 0.0256 + 0.0016 + 0.0676 + 0.0036​}{5}\\
 \sigma^2 = \frac{0.292}{5}\\
 \sigma^2 = 0.0584
-\boxed{0.0584}
 \end{align}
 $$
 
@@ -276,14 +275,13 @@ $$
 data = [4.5, 5.1, 4.9, 5.2, 5.0], \quad \mu = 5, \quad n=5 \\
 \hat{\sigma^2} = \frac{(4.5−5)^2+(5.1−5)^2+(4.9−5)^2+(5.2−5)^2+(5.0−5)^2}{5} \\
 \hat{\sigma^2} = \frac{0.31}{5} \\
-\hat{\sigma^2} = 0.062\\
-\boxed{0.062}
+\hat{\sigma^2} = 0.062
 \end{align}
 $$
 
 ### Example 4. Estimating Parameters for a Normal Distribution with Log-Likelihood
 
-**Problem**
+**Problem**:
 
 Estimate $\mu$ and $\sigma^2$ for a normal distribution using the log likelihood function.
 
@@ -325,4 +323,166 @@ log_likelihood  <- function(mu, log_sigma) {
 mle(log_likelihood, start = list(mu = mean(data), log_sigma = log(sd(data))))
 ```
 
-### nah thats enough. I'm going 2 sleep now
+### Example 5. MLE for Normal Distribution (Multivariate Case)
+
+**Problem**:
+
+Given a bivariate normal distribution $X \sim N(\mu, \sum)$, where $\mu = (\mu_1, \mu_2)$ and $\sum$ is the covariance matrix, estimate $\mu_1, \mu_2 \ and \ \sum$
+
+**Pen and paper solution**:
+
+the log-likelihood for a multivariate normal distribution is: $log \ L(\mu, \sum) = - \frac{n}{2} log|\sum| - \frac{1}{2} \sum^n_{i=1} (X_i - \mu)^T \sum^{-1} (X_i - \mu)$
+
+the mle estimates for $\mu$ are $\hat{\mu} = \frac{1}{n} \sum^n_{i=1} X_i$
+
+the mle estimate for $\sum$ is $\hat{\sum} = \frac{1}{n} \sum^n_{i=1} (X_i - \mu) (X_i - \hat{\mu})^T$
+
+**R code**:
+
+```r
+# Sample bivariate data
+data <- matrix(c(4.5, 5.1, 4.9, 5.2), ncol = 2)
+
+# MLE for mean and covariance matrix
+mle_mean <- colMeans(data)
+mle_covariance <- cov(data)
+mle_mean
+mle_covariance
+```
+
+### 4. Bayesian Estimation
+
+Objective- Estimate parameters by combining prior information with data, resulting in a
+posterior distribution.
+
+**Common Tools:**:
+
+1. Prior Distribution- Represents the initial beliefs about the parameters before
+observing the data.
+2. Likelihood Function- Represents the probability of the observed data given the
+parameters.
+3. Posterior Distribution- Combines the prior distribution and likelihood to provide
+updated beliefs after observing the data.
+
+**Techniques:**
+
+1. Bayes' Theorem- Used to update the prior distribution in light of the observed
+data to obtain the posterior distribution.
+2. Markov Chain Monte Carlo (MCMC)- A computational technique to sample
+from the posterior distribution when it cannot be calculated directly.
+
+### 5. Resampling Methods
+
+Objective: Estimate the sampling distribution of a statistic by repeatedly sampling from
+the data.
+
+**Common Tools**:
+
+1. Bootstrap- Involves sampling with replacement from the original sample to
+create "bootstrap samples" and then estimating the statistic of interest across these
+samples.
+2. Jackknife- Involves systematically leaving out one observation at a time from the
+sample set and recalculating the estimate.
+
+**Techniques:**
+
+1. Bootstrap Confidence Intervals- Construct confidence intervals by using the
+distribution of bootstrap samples.
+2. Jackknife Estimation- Provides an estimate of bias and variance by
+systematically recalculating the statistic with one observation omitted at a time.
+
+### 6. Bayesian Methods
+
+Objective- Estimate population parameters by incorporating prior knowledge or beliefs
+with the observed data.
+
+**Common Tools**:
+
+1. Prior Distributions- These reflect what is known about a parameter before
+observing the data.
+2. Posterior Distributions- These combine the prior distribution with the likelihood
+of the observed data to update the belief about the parameter.
+3. Bayesian Inference- Draws conclusions about parameters based on the posterior
+distribution.
+
+**Techniques:**
+
+1. Bayes’ Theorem: Used to update the probability estimate for a hypothesis as
+more evidence or information becomes available.
+2. MCMC (Markov Chain Monte Carlo): A class of algorithms used to sample
+from the posterior distribution when it is complex and not analytically tractable.
+
+### 7. Non-Parametric Methods
+
+Objective- Estimate population parameters without assuming a specific parametric form
+for the distribution.
+
+**Common Tools**:
+
+1. Kernel Density Estimation: Estimates the probability density function of a
+random variable.
+2. Empirical Cumulative Distribution Function (ECDF): Estimates the
+cumulative distribution function without assuming a specific distribution.
+
+**Techniques:**
+
+1. Bootstrap Methods- Resampling technique that does not assume any particular
+distribution.
+2. Rank-Based Methods- Estimation methods that rely on the ranks of data rather
+than their actual values.
+
+### 8. Moment Estimation
+
+Objective- Estimate parameters by equating sample moments (mean, variance, etc.) with
+population moments.
+
+**Common Tools:**
+
+1. Sample Moments- Calculated directly from the data.
+2. Population Moments- Defined by the distribution and its parameters.
+
+**Techniques:**
+
+1. Method of Moments- Set sample moments equal to theoretical moments and
+solve for the parameters.
+
+### 9. Monte Carlo Methods
+
+Objective: Use random sampling and statistical modeling to estimate mathematical or
+physical systems.
+
+**Common Tools:**
+
+1. Monte Carlo Simulation- Uses random sampling to obtain numerical results, often
+used to estimate complex functions or distributions.
+
+**Techniques:**
+
+1. Simulating Random Variables: Generates random variables according to a
+specified distribution.
+2. Estimating Probabilities: Uses repeated random sampling to estimate the
+probability of an event.
+
+### 10. Goodness-of-Fit Tests
+
+Objective- Evaluate how well a statistical model fits the observed data.
+
+**Common Tools:**
+
+1. Chi-Square Test- Compares observed and expected frequencies.
+2. Kolmogorov-Smirnov Test- Compares the empirical distribution function with a
+specified distribution.
+
+**Techniques:**
+
+1. Chi-Square Goodness-of-Fit- Tests whether a sample comes from a population
+with a specific distribution.
+2. Kolmogorov-Smirnov Test- Non-parametric test to compare the observed data
+distribution with a theoretical one.
+
+**Summary**:
+
+Estimation in statistics encompasses a variety of tools and techniques, each suited to different
+types of data and estimation needs. The choice of tool and technique depends on the nature of the
+data, the underlying assumptions, and the specific goals of the analysis. Mastery of these
+techniques is important for making accurate and reliable inferences in statistical practice.

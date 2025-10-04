@@ -219,12 +219,10 @@ mle_variance
 $$
 \begin{align} \\
 \text{data: [4.5, 5.1, 4.9, 5.2, 5.0]} \\
-\\
 \text{First step is to get the mean:} \\
 \hat{\mu} = \frac{4.5 + 5.1 + 4.9 + 5.2 + 5.0}{5} \\
 \hat{\mu} = \frac{24.7}{5} \\
 \underline{\hat{\mu} = 4.94} \\
-\\
 \text{now for } \sigma^2:\\
 \sigma^2 = \frac{(4.5 - 4.94)^2 (5.1 - 4.94)^2 (4.9 - 4.94)^2 (5.2 - 4.94)^2 (5.0 - 4.94)^2}{5} \\
 \sigma^2 = \frac{ 0.1936 + 0.0256 + 0.0016 + 0.0676 + 0.0036​}{5}\\

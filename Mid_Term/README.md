@@ -226,8 +226,6 @@ $$
 \end{align}
 $$
 
----
-
 $$
 \begin{align}
 \text{now for } \sigma^2:\\
@@ -235,5 +233,96 @@ $$
 \sigma^2 = \frac{ 0.1936 + 0.0256 + 0.0016 + 0.0676 + 0.0036​}{5}\\
 \sigma^2 = \frac{0.292}{5}\\
 \sigma^2 = 0.0584
+\boxed{0.0584}
 \end{align}
 $$
+
+### Example 3. Estimating the Variance (Known Mean)
+
+Given the data $X_1,X_2......,X_n ~ N(\mu, \sigma^2)$
+
+**Pen and Paper solution**:
+
+The likelihood function is: $Log \ L(\mu) = -\frac{1}{n} log(2\pi \sigma^2) - \frac{1}{2\sigma^2} \sum^n_{i=1} (X_i - \mu)^2$
+
+Differentiating with the respect to $\sigma^2: log \ L(\sigma^2) = - \frac{n}{2\sigma^2} + \frac{1}{2\sigma^4} \sum^n_{i=1} (X_i - \mu)^2 = 0$ solving for $\sigma^2: \sigma^2 = \frac{1}{n} \sum^n_{i=1} (X_i - \mu)^2.$
+
+**or just**:
+
+$\hat{\sigma^2} = \frac{1}{n} \sum^n_{i=1} (X_i - \mu)^2$
+
+**R code**:
+
+```r
+data <- c(4.5, 5.1, 4.9, 5.2, 5.0)
+mu <- 5
+
+# MLE for variance (known mean)
+mle_variance <- mean((data - mu)^2)
+mle_variance
+```
+
+**manual**:
+
+$$
+\begin{align}
+\text{using the formula} \\
+\hat{\sigma^2} = \frac{1}{n} \sum^n_{i=1} (X_i - \mu)^2
+\end{align}
+$$
+
+$$
+\begin{align}
+data = [4.5, 5.1, 4.9, 5.2, 5.0], \quad \mu = 5, \quad n=5 \\
+\hat{\sigma^2} = \frac{(4.5−5)^2+(5.1−5)^2+(4.9−5)^2+(5.2−5)^2+(5.0−5)^2}{5} \\
+\hat{\sigma^2} = \frac{0.31}{5} \\
+\hat{\sigma^2} = 0.062\\
+\boxed{0.062}
+\end{align}
+$$
+
+### Example 4. Estimating Parameters for a Normal Distribution with Log-Likelihood
+
+**Problem**
+
+Estimate $\mu$ and $\sigma^2$ for a normal distribution using the log likelihood function.
+
+**pen and paper solution**:
+
+The log likelihood function for $X_1, X_2, ...., X_n ~ N(\mu, \sigma^2): log \ L(\mu, \sigma^2) = - \frac{n}{2} log(2 \pi \sigma^2) - \frac{1}{2 \sigma^2} \sum^2_{i=1} (X_i - \mu)^2$
+
+Taking partial derivatives and solving yields the MLEs for $\mu$ and $\sigma^2$.
+
+**R code**:
+
+```r
+library(stats4)
+
+data <- c(4.5, 5.1, 4.9, 5.2, 5.0)
+
+log_likelihood  <- function(mu, sigma) {
+  -sum(dnorm(data, mean = mu, sd = sigma, log = TRUE))
+}
+
+# MLE Estimation
+mle(log_likelihood, start = list(mu = mean(data), sigma = sd(data)))
+```
+
+**fixed code**:
+
+```r
+library(stats4)
+
+data <- c(4.5, 5.1, 4.9, 5.2, 5.0)
+
+# Log-likelihood with positive sigma ensured
+log_likelihood  <- function(mu, log_sigma) {
+  sigma <- exp(log_sigma)  # ensure sigma > 0
+  -sum(dnorm(data, mean = mu, sd = sigma, log = TRUE))
+}
+
+# MLE Estimation
+mle(log_likelihood, start = list(mu = mean(data), log_sigma = log(sd(data))))
+```
+
+### nah thats enough. I'm going 2 sleep now

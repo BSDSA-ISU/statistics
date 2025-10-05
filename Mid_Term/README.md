@@ -464,8 +464,8 @@ $$
 \hat{\Sigma} = \frac{1}{2} \left(
 \left[ \begin{array}{} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{array}{}\right] + \left[
 \begin{array}{} 0.04 & 0.01 \\ 0.01 & 0\end{array}{} \right] \right)
-= \frac{1}{2} \left[ 
-\begin{array}{} 0.08 & 0.02 \\ 0.02 & 0.005 \end{array}{} \right] = \left[ 
+= \frac{1}{2} \left[
+\begin{array}{} 0.08 & 0.02 \\ 0.02 & 0.005 \end{array}{} \right] = \left[
 \begin{array}{} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{array}{} \right]
 \end{align}
 $$

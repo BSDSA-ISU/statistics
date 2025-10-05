@@ -474,7 +474,8 @@ $$
 \begin{align}
 \text{MLE covariance matrix is:} \\
 \hat{\sum} = \left[
-\begin{array}{} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{array}{} \right]
+\begin{array}{} 0.04 & 0.01 \\
+0.01 & 0.0025 \end{array}{} \right]
 \end{align}
 $$
 

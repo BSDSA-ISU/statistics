@@ -463,10 +463,10 @@ $$
 \begin{array}{cc}
 -0.2 \\
 -0.05
-\end{array}\right]
+\end{array}\right] \left[
 \begin{array}{cc}
 -0.2 & -0.05
-\end{array} = \left[
+\end{array} \right] = \left[
 \begin{array}{cc}
 0.04 & 0.01 \\
 0.01 & 0.0025
@@ -475,10 +475,10 @@ $$
 \begin{array}{cc}
 0.2 \\
 0.05
-\end{array}{}\right]
+\end{array}{}\right] \left[
 \begin{array}{cc}
 0.2 & 0.05
-\end{array}{} = \left[
+\end{array}{} \right] = \left[
 \begin{array}{cc}
 0.04 & 0.01 \\
 0.01 & 0.0025

@@ -167,7 +167,7 @@ Differentiating with respect $\mu$ and setting it to 0: $\frac{d}{du} \ log \ L(
 
 **or just**:
 
-### $\hat{\mu} = \frac{\sum^n_{i=1} X_i}{n}$
+### $\hat{\mu} = \frac{1}{n}\sum^n_{i=1} X_i$
 
 **R code**:
 
@@ -215,6 +215,15 @@ mle_variance
 ```
 
 **In latex/paper**:
+
+$$
+\begin{align}
+\text{using the formula for} \hat{\mu}: \\
+\hat{\mu} = \frac{1}{n}\sum^n_{i=1} X_i \\
+\text{for } \sigma^2: \\
+\sigma^2 = \frac{1}{n} \sum^n_{i=1} (X_i - \hat{\mu})^2
+\end{align}
+$$
 
 $$
 \begin{align} \\
@@ -323,6 +332,34 @@ log_likelihood  <- function(mu, log_sigma) {
 mle(log_likelihood, start = list(mu = mean(data), log_sigma = log(sd(data))))
 ```
 
+**manual**:
+
+$$
+\begin{align}
+\text{using the formula} \\
+\hat{\sigma^2} = \frac{1}{n} \sum^n_{i=1} (X_i - \mu)^2
+\end{align}
+$$
+
+$$
+\begin{align}
+data = [4.5, 5.1, 4.9, 5.2, 5.0], \quad \mu = 5, \quad n=5 \\
+\hat{\sigma^2} = \frac{(4.5−5)^2+(5.1−5)^2+(4.9−5)^2+(5.2−5)^2+(5.0−5)^2}{5} \\
+\hat{\sigma^2} = \frac{0.31}{5} \\
+\hat{\sigma^2} = 0.062
+\end{align}
+$$
+
+$$
+\begin{align}
+\text{For log } \hat{\sigma} : \hat{\sigma} = \sqrt{\hat{\sigma}^2}, \hat{\log \sigma} = \ln(\hat{\sigma}) \\
+\hat{\sigma} &= \sqrt{0.0584} \\
+\hat{\sigma} &\approx 0.2415 \\
+\hat{\log \sigma} &= \ln(0.2415) \\
+\hat{\log \sigma} &\approx -1.4209
+\end{align}
+$$
+
 ### Example 5. MLE for Normal Distribution (Multivariate Case)
 
 **Problem**:
@@ -349,6 +386,86 @@ mle_covariance <- cov(data)
 mle_mean
 mle_covariance
 ```
+
+**Fixed for MLE code:**
+
+```r
+# Sample bivariate data
+data <- matrix(c(4.5, 5.1, 4.9, 5.2), ncol = 2)
+
+# MLE for mean and covariance matrix
+mle_mean <- colMeans(data)
+mle_covariance <- cov(data) * (nrow(data)-1)/mle_mean
+mle_covariance
+nrow(data)
+```
+
+**manual on paper example**:
+
+$$
+  Data =
+  \left[ {\begin{array}{cc}
+   4.5 & 5.1 \\
+   4.9 & 5.2 \\
+  \end{array} } \right]
+$$
+
+Computing for mean:
+
+$$
+\begin{align}
+\text{Column 1: 4.5, 4.9} \\
+\bar{x}_1 = \frac{4.5 + 4.9}{2} \\
+bar{x}_1 = \frac{9.4}{2} \\
+4.7 \\
+\text{column 2: 5.1, 5.2}\\
+\bar{x}_2 = \frac{5.1 + 5.2}{2} \\
+\bar{x}_2 = \frac{10.3}{2} \\
+5.15 \\
+\text{Result: }
+\hat{\mu} =
+\left[ \begin{array}{c}
+4.7 \\
+5.15
+\end{array} \right]
+\end{align}
+$$
+
+$$
+\text{subtract each mean for each row} \\
+\begin{align}
+x_1 - \hat{\mu} =
+\begin{bmatrix} 4.5 - 4.7 \\ 5.1 - 5.15 \end{bmatrix} =
+\begin{bmatrix} -0.2 \\ -0.05 \end{bmatrix}
+\\
+x_2 - \hat{\mu} =
+\begin{bmatrix} 4.9 - 4.7 \\ 5.2 - 5.15 \end{bmatrix} =
+\begin{bmatrix} 0.2 \\ 0.05 \end{bmatrix}
+\end{align}
+$$
+
+$$
+\text{Compute outer products} \\
+\begin{align}
+(x_1 - \hat{\mu})(x_1 - \hat{\mu})^T =
+\begin{bmatrix} -0.2 \\ -0.05 \end{bmatrix}
+\begin{bmatrix} -0.2 & -0.05 \end{bmatrix} =
+\begin{bmatrix} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{bmatrix} \\
+(x_2 - \hat{\mu})(x_2 - \hat{\mu})^T =
+\begin{bmatrix} 0.2 \\ 0.05 \end{bmatrix}
+\begin{bmatrix} 0.2 & 0.05 \end{bmatrix} =
+\begin{bmatrix} 0.04 & 0.01 \\\ 0.01 & 0.0025 \end{bmatrix}
+\end{align}
+$$
+
+$$
+\hat{\Sigma} = \frac{1}{2} \left(
+\begin{bmatrix} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{bmatrix} +
+\begin{bmatrix} 0.04 & 0.01 \\ 0.01 & 0\end{bmatrix}\right)
+= \frac{1}{2}
+\begin{bmatrix} 0.08 & 0.02 \\ 0.02 & 0.005 \end{bmatrix}
+\begin{bmatrix} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{bmatrix}
+$$
 
 ### 4. Bayesian Estimation
 

@@ -434,44 +434,47 @@ $$
 $$
 \begin{align}
 \text{subtract each mean for each row} \\
-x_1 - \hat{\mu} =
-\begin{bmatrix} 4.5 - 4.7 \\ 5.1 - 5.15 \end{bmatrix} =
-\begin{bmatrix} -0.2 \\ -0.05 \end{bmatrix}
+x_1 - \hat{\mu} = \left[
+\begin{array}{} 4.5 - 4.7 \\ 5.1 - 5.15 \end{array}{} \right] =
+\left[
+\begin{array}{} -0.2 \\ -0.05 \end{array}{} \right]
 \\
-x_2 - \hat{\mu} =
-\begin{bmatrix} 4.9 - 4.7 \\ 5.2 - 5.15 \end{bmatrix} =
-\begin{bmatrix} 0.2 \\ 0.05 \end{bmatrix}
+x_2 - \hat{\mu} = \left[
+\begin{array}{} 4.9 - 4.7 \\ 5.2 - 5.15 \end{array}{} \right] = \left[
+\begin{array}{} 0.2 \\ 0.05 \end{array}{} \right]
 \end{align}
 $$
 
 $$
 \begin{align}
 \text{Compute outer products} \\
-(x_1 - \hat{\mu})(x_1 - \hat{\mu})^T =
-\begin{bmatrix} -0.2 \\ -0.05 \end{bmatrix}
-\begin{bmatrix} -0.2 & -0.05 \end{bmatrix} =
-\begin{bmatrix} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{bmatrix} \\
-(x_2 - \hat{\mu})(x_2 - \hat{\mu})^T =
-\begin{bmatrix} 0.2 \\ 0.05 \end{bmatrix}
-\begin{bmatrix} 0.2 & 0.05 \end{bmatrix} =
-\begin{bmatrix} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{bmatrix}
+(x_1 - \hat{\mu})(x_1 - \hat{\mu})^T = \left[
+\begin{array}{} -0.2 \\ -0.05 \end{array}{}\right]
+\begin{array}{} -0.2 & -0.05 \end{array}{} = \left[
+\begin{array}{} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{array}{}\right] \\
+(x_2 - \hat{\mu})(x_2 - \hat{\mu})^T = \left[
+\begin{array}{} 0.2 \\ 0.05 \end{array}{}\right]
+\begin{array}{} 0.2 & 0.05 \end{array}{} = \left[
+\begin{array}{} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{array}{}\right]
 \end{align}
 $$
 
 $$
+\begin{align}
 \hat{\Sigma} = \frac{1}{2} \left(
-\begin{bmatrix} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{bmatrix} +
-\begin{bmatrix} 0.04 & 0.01 \\ 0.01 & 0\end{bmatrix}\right)
-= \frac{1}{2}
-\begin{bmatrix} 0.08 & 0.02 \\ 0.02 & 0.005 \end{bmatrix} =
-\begin{bmatrix} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{bmatrix}
+\left[ \begin{array}{} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{array}{}\right] + \left[
+\begin{array}{} 0.04 & 0.01 \\ 0.01 & 0\end{array}{} \right] \right)
+= \frac{1}{2} \left[ 
+\begin{array}{} 0.08 & 0.02 \\ 0.02 & 0.005 \end{array}{} \right] = \left[ 
+\begin{array}{} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{array}{} \right]
+\end{align}
 $$
 
 $$
 \begin{align}
 \text{MLE covariance matrix is:} \\
-\hat{\sum} =
-\begin{bmatrix} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{bmatrix}
+\hat{\sum} = \left[
+\begin{array}{} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{array}{} \right]
 \end{align}
 $$
 

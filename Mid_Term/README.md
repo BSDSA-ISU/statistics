@@ -468,7 +468,8 @@ $$
 -0.2 & -0.05
 \end{array} = \left[
 \begin{array}{cc}
-0.04 & 0.01 \\ 0.01 & 0.0025
+0.04 & 0.01 \\
+0.01 & 0.0025
 \end{array}\right] \\
 (x_2 - \hat{\mu})(x_2 - \hat{\mu})^T = \left[
 \begin{array}{cc}

@@ -435,13 +435,24 @@ $$
 \begin{align}
 \text{subtract each mean for each row} \\
 x_1 - \hat{\mu} = \left[
-\begin{array}{cc} 4.5 - 4.7 \\ 5.1 - 5.15 \end{array} \right] =
+\begin{array}{cc}
+4.5 - 4.7 \\
+5.1 - 5.15 \end{array}
+\right] =
 \left[
-\begin{array}{cc} -0.2 \\ -0.05 \end{array} \right]
+\begin{array}{cc}
+-0.2 \\
+-0.05 \end{array} \right]
 \\
 x_2 - \hat{\mu} = \left[
-\begin{array}{cc} 4.9 - 4.7 \\ 5.2 - 5.15 \end{array} \right] = \left[
-\begin{array}{cc} 0.2 \\ 0.05 \end{array} \right]
+\begin{array}{cc}
+4.9 - 4.7 \\
+5.2 - 5.15
+\end{array} \right] = \left[
+\begin{array}{cc}
+0.2 \\
+0.05
+\end{array} \right]
 \end{align}
 $$
 
@@ -449,24 +460,52 @@ $$
 \begin{align}
 \text{Compute outer products} \\
 (x_1 - \hat{\mu})(x_1 - \hat{\mu})^T = \left[
-\begin{array}{cc} -0.2 \\ -0.05 \end{array}\right]
-\begin{array}{cc} -0.2 & -0.05 \end{array} = \left[
-\begin{array}{cc} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{array}\right] \\
+\begin{array}{cc}
+-0.2 \\
+-0.05
+\end{array}\right]
+\begin{array}{cc}
+-0.2 & -0.05
+\end{array} = \left[
+\begin{array}{cc}
+0.04 & 0.01 \\ 0.01 & 0.0025
+\end{array}\right] \\
 (x_2 - \hat{\mu})(x_2 - \hat{\mu})^T = \left[
-\begin{array}{cc} 0.2 \\ 0.05 \end{array}{}\right]
-\begin{array}{cc} 0.2 & 0.05 \end{array}{} = \left[
-\begin{array}{cc} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{array}\right]
+\begin{array}{cc}
+0.2 \\
+0.05
+\end{array}{}\right]
+\begin{array}{cc}
+0.2 & 0.05
+\end{array}{} = \left[
+\begin{array}{cc}
+0.04 & 0.01 \\
+0.01 & 0.0025
+\end{array}\right]
 \end{align}
 $$
 
 $$
 \begin{align}
 \hat{\Sigma} = \frac{1}{2} \left(
-\left[ \begin{array}{cc} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{array}\right] + \left[
-\begin{array}{cc} 0.04 & 0.01 \\ 0.01 & 0\end{array} \right] \right)
+\left[
+\begin{array}{cc}
+0.04 & 0.01 \\
+0.01 & 0.0025
+\end{array}\right] + \left[
+\begin{array}{cc}
+0.04 & 0.01 \\
+0.01 & 0
+\end{array} \right] \right)
 = \frac{1}{2} \left[
-\begin{array}{cc} 0.08 & 0.02 \\ 0.02 & 0.005 \end{array} \right] = \left[
-\begin{array}{cc} 0.04 & 0.01 \\ 0.01 & 0.0025 \end{array} \right]
+\begin{array}{cc}
+0.08 & 0.02 \\
+0.02 & 0.005
+\end{array} \right] = \left[
+\begin{array}{cc}
+0.04 & 0.01 \\
+0.01 & 0.0025
+\end{array} \right]
 \end{align}
 $$
 

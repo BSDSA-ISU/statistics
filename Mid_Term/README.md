@@ -336,17 +336,30 @@ mle(log_likelihood, start = list(mu = mean(data), log_sigma = log(sd(data))))
 
 $$
 \begin{align}
-\text{using the formula} \\
-\hat{\sigma^2} = \frac{1}{n} \sum^n_{i=1} (X_i - \mu)^2
+\text{using the formula for} \hat{\mu}: \\
+\hat{\mu} = \frac{1}{n}\sum^n_{i=1} X_i \\
+\text{for } \sigma^2: \\
+\sigma^2 = \frac{1}{n} \sum^n_{i=1} (X_i - \hat{\mu})^2
+\end{align}
+$$
+
+$$
+\begin{align} \\
+\text{data: [4.5, 5.1, 4.9, 5.2, 5.0]} \\
+\text{First step is to get the mean:} \\
+\hat{\mu} = \frac{4.5 + 5.1 + 4.9 + 5.2 + 5.0}{5} \\
+\hat{\mu} = \frac{24.7}{5} \\
+\underline{\hat{\mu} = 4.94}
 \end{align}
 $$
 
 $$
 \begin{align}
-data = [4.5, 5.1, 4.9, 5.2, 5.0], \quad \mu = 5, \quad n=5 \\
-\hat{\sigma^2} = \frac{(4.5−5)^2+(5.1−5)^2+(4.9−5)^2+(5.2−5)^2+(5.0−5)^2}{5} \\
-\hat{\sigma^2} = \frac{0.31}{5} \\
-\hat{\sigma^2} = 0.062
+\text{now for } \sigma^2:\\
+\sigma^2 = \frac{(4.5 - 4.94)^2 + (5.1 - 4.94)^2 + (4.9 - 4.94)^2 + (5.2 - 4.94)^2 + (5.0 - 4.94)^2}{5} \\
+\sigma^2 = \frac{ 0.1936 + 0.0256 + 0.0016 + 0.0676 + 0.0036​}{5}\\
+\sigma^2 = \frac{0.292}{5}\\
+\sigma^2 = 0.0584
 \end{align}
 $$
 

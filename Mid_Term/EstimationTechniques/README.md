@@ -1,5 +1,7 @@
 # Module 3. Estimation Techniques
 
+> (use Markdown Preview Github Styling on vscode if necessary)
+
 Estimation in statistics involves inferring the characteristics of a population based on a sample.
 Various tools and techniques are employed to perform these estimations, each suited to different
 types of data and estimation goals. Below is a detailed overview of the key tools and techniques
@@ -217,32 +219,32 @@ mle_variance
 **In latex/paper**:
 
 $$
-\begin{align}
+\begin{aligned}
 \text{using the formula for} \hat{\mu}: \\
 \hat{\mu} = \frac{1}{n}\sum^n_{i=1} X_i \\
 \text{for } \sigma^2: \\
 \sigma^2 = \frac{1}{n} \sum^n_{i=1} (X_i - \hat{\mu})^2
-\end{align}
+\end{aligned}
 $$
 
 $$
-\begin{align} \\
+\begin{aligned} \\
 \text{data: [4.5, 5.1, 4.9, 5.2, 5.0]} \\
 \text{First step is to get the mean:} \\
 \hat{\mu} = \frac{4.5 + 5.1 + 4.9 + 5.2 + 5.0}{5} \\
 \hat{\mu} = \frac{24.7}{5} \\
 \underline{\hat{\mu} = 4.94}
-\end{align}
+\end{aligned}
 $$
 
 $$
-\begin{align}
+\begin{aligned}
 \text{now for } \sigma^2:\\
 \sigma^2 = \frac{(4.5 - 4.94)^2 + (5.1 - 4.94)^2 + (4.9 - 4.94)^2 + (5.2 - 4.94)^2 + (5.0 - 4.94)^2}{5} \\
 \sigma^2 = \frac{ 0.1936 + 0.0256 + 0.0016 + 0.0676 + 0.0036​}{5}\\
 \sigma^2 = \frac{0.292}{5}\\
 \sigma^2 = 0.0584
-\end{align}
+\end{aligned}
 $$
 
 ### Example 3. Estimating the Variance (Known Mean)
@@ -273,19 +275,19 @@ mle_variance
 **manual**:
 
 $$
-\begin{align}
+\begin{aligned}
 \text{using the formula} \\
 \hat{\sigma^2} = \frac{1}{n} \sum^n_{i=1} (X_i - \mu)^2
-\end{align}
+\end{aligned}
 $$
 
 $$
-\begin{align}
+\begin{aligned}
 data = [4.5, 5.1, 4.9, 5.2, 5.0], \quad \mu = 5, \quad n=5 \\
 \hat{\sigma^2} = \frac{(4.5−5)^2+(5.1−5)^2+(4.9−5)^2+(5.2−5)^2+(5.0−5)^2}{5} \\
 \hat{\sigma^2} = \frac{0.31}{5} \\
 \hat{\sigma^2} = 0.062
-\end{align}
+\end{aligned}
 $$
 
 ### Example 4. Estimating Parameters for a Normal Distribution with Log-Likelihood
@@ -335,42 +337,42 @@ mle(log_likelihood, start = list(mu = mean(data), log_sigma = log(sd(data))))
 **manual**:
 
 $$
-\begin{align}
+\begin{aligned}
 \text{using the formula for} \hat{\mu}: \\
 \hat{\mu} = \frac{1}{n}\sum^n_{i=1} X_i \\
 \text{for } \sigma^2: \\
 \sigma^2 = \frac{1}{n} \sum^n_{i=1} (X_i - \hat{\mu})^2
-\end{align}
+\end{aligned}
 $$
 
 $$
-\begin{align} \\
+\begin{aligned} \\
 \text{data: [4.5, 5.1, 4.9, 5.2, 5.0]} \\
 \text{First step is to get the mean:} \\
 \hat{\mu} = \frac{4.5 + 5.1 + 4.9 + 5.2 + 5.0}{5} \\
 \hat{\mu} = \frac{24.7}{5} \\
 \underline{\hat{\mu} = 4.94}
-\end{align}
+\end{aligned}
 $$
 
 $$
-\begin{align}
+\begin{aligned}
 \text{now for } \sigma^2:\\
 \sigma^2 = \frac{(4.5 - 4.94)^2 + (5.1 - 4.94)^2 + (4.9 - 4.94)^2 + (5.2 - 4.94)^2 + (5.0 - 4.94)^2}{5} \\
 \sigma^2 = \frac{ 0.1936 + 0.0256 + 0.0016 + 0.0676 + 0.0036​}{5}\\
 \sigma^2 = \frac{0.292}{5}\\
 \sigma^2 = 0.0584
-\end{align}
+\end{aligned}
 $$
 
 $$
-\begin{align}
+\begin{aligned}
 \text{For log } \hat{\sigma} : \hat{\sigma} = \sqrt{\hat{\sigma}^2}, \hat{\log \sigma} = \ln(\hat{\sigma}) \\
 \hat{\sigma} &= \sqrt{0.0584} \\
 \hat{\sigma} &\approx 0.2415 \\
 \hat{\log \sigma} &= \ln(0.2415) \\
 \hat{\log \sigma} &\approx -1.4209
-\end{align}
+\end{aligned}
 $$
 
 ### Example 5. MLE for Normal Distribution (Multivariate Case)
@@ -426,7 +428,7 @@ $$
 Computing for mean:
 
 $$
-\begin{align}
+\begin{aligned}
 \text{Column 1: 4.5, 4.9} \\
 \bar{x}_1 = \frac{4.5 + 4.9}{2} \\
 bar{x}_1 = \frac{9.4}{2} \\
@@ -441,11 +443,11 @@ bar{x}_1 = \frac{9.4}{2} \\
 4.7 \\
 5.15
 \end{array} \right]
-\end{align}
+\end{aligned}
 $$
 
 $$
-\begin{align}
+\begin{aligned}
 \text{subtract each mean for each row} \\
 x_1 - \hat{\mu} = \left[
 \begin{array}{cc}
@@ -466,11 +468,11 @@ x_2 - \hat{\mu} = \left[
 0.2 \\
 0.05
 \end{array} \right]
-\end{align}
+\end{aligned}
 $$
 
 $$
-\begin{align}
+\begin{aligned}
 \text{Compute outer products} \\
 (x_1 - \hat{\mu})(x_1 - \hat{\mu})^T = \left[
 \begin{array}{cc}
@@ -496,11 +498,11 @@ $$
 0.04 & 0.01 \\
 0.01 & 0.0025
 \end{array}\right]
-\end{align}
+\end{aligned}
 $$
 
 $$
-\begin{align}
+\begin{aligned}
 \hat{\Sigma} = \frac{1}{2} \left(
 \left[
 \begin{array}{cc}
@@ -520,16 +522,18 @@ $$
 0.04 & 0.01 \\
 0.01 & 0.0025
 \end{array} \right]
-\end{align}
+\end{aligned}
 $$
 
 $$
-\begin{align}
+\begin{aligned}
 \text{MLE covariance matrix is:} \\
 \hat{\sum} = \left[
-\begin{array}{} 0.04 & 0.01 \\
-0.01 & 0.0025 \end{array}{} \right]
-\end{align}
+\begin{array}{cc}
+ 0.04 & 0.01 \\
+0.01 & 0.0025
+\end{array}{} \right]
+\end{aligned}
 $$
 
 ### 4. Bayesian Estimation

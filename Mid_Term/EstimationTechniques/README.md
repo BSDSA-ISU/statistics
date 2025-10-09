@@ -1,6 +1,6 @@
 # Module 3. Estimation Techniques
 
-> (use Markdown Preview Github Styling on vscode if necessary)
+> (use Markdown Preview Github Styling on vscode if necessary, also some examples here doesn't run at all so be careful)
 
 Estimation in statistics involves inferring the characteristics of a population based on a sample.
 Various tools and techniques are employed to perform these estimations, each suited to different

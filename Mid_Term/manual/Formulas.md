@@ -11,8 +11,10 @@
 | 9  | 100 |
 
 $$
-\text{For mean} \\
-\mu = \frac{1}{n} \sum^n_{i = 1} X_i
+\begin{aligned}
+    \text{For mean} \\
+    \mu = \frac{1}{n} \sum^n_{i = 1} X_i
+\end{aligned}
 $$
 
 ### Step 1: Compute for mean
@@ -45,25 +47,31 @@ $$
 ### Step 2: Compute for
 
 $$
+\begin{aligned}
 \text{formulas} \\
 X^\prime(x - \bar{x}) \\
 Y^\prime(y - \bar{y})
+\end{aligned}
 $$
 $$
+\begin{aligned}
 X^\prime(x - \bar{x}) \\
 2 - 5.2 = -3.2 \\
 3 - 5.2 = -2.2 \\
 5 - 5.2 = -0.2 \\
 7 - 5.2 = 1.8 \\
 9 - 5.2 = 3.8 \\
+\end{aligned}
 $$
 $$
-Y\prime(y - \bar{y}) \\
-50 - 76 = 26 \\
-60 - 76 = 16 \\
-80 - 76 = 4 \\
-90 - 76 = 14 \\
-100 - 76 = 24 \\
+\begin{aligned}
+    Y\prime(y - \bar{y}) \\
+    50 - 76 = 26 \\
+    60 - 76 = 16 \\
+    80 - 76 = 4 \\
+    90 - 76 = 14 \\
+    100 - 76 = 24 \\
+\end{aligned}
 $$
 
 ### step 4: Sum of the products
@@ -89,9 +97,11 @@ $$
 $$
 
 $$
-\sum(x- \bar{x})^2 = (-3.2)^2 + (-2.2)^2 + (-0.2)^2 + (1.8)^2 + (3.8)^2 \\
-\sum(x- \bar{x})^2 = 1024 + 4.84 + 0.04 + 3.24 + 14.44 \\
-\sum(x- \bar{x})^2 = 32.8
+\begin{aligned}
+    \sum(x- \bar{x})^2 = (-3.2)^2 + (-2.2)^2 + (-0.2)^2 + (1.8)^2 + (3.8)^2 \\
+    \sum(x- \bar{x})^2 = 1024 + 4.84 + 0.04 + 3.24 + 14.44 \\
+    \sum(x- \bar{x})^2 = 32.8
+\end{aligned}
 $$
 
 ### Step 6: get the $B_1$ and $B_0$
@@ -108,11 +118,13 @@ $$
 **FOR $B_0$**:
 
 $$
+\begin{aligned}
 B_0 = \bar{y} - B_1 \bar{x} \\
 B_0 = (76) - (7.13)(5.2) \\
 \boxed{
 B_0 = 38.9
 }
+\end{aligned}
 $$
 
 **Final**:
@@ -124,11 +136,13 @@ $$
 Y=38.9+7.13X:
 $$
 $$
-Y=38.9+7.13(2) = 53.16\\
-Y=38.9+7.13(3) = 60.29\\
-Y=38.9+7.13(5) = 74.55\\
-Y=38.9+7.13(7) = 88.91\\
-Y=38.9+7.13(9) = 103.07
+\begin{aligned}
+    Y=38.9+7.13(2) = 53.16 \\
+    Y=38.9+7.13(3) = 60.29 \\
+    Y=38.9+7.13(5) = 74.55 \\
+    Y=38.9+7.13(7) = 88.91 \\
+    Y=38.9+7.13(9) = 103.07s
+\end{aligned}
 $$
 
 ### Final table

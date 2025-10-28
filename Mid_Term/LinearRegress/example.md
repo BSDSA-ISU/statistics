@@ -17,6 +17,16 @@ Pretend you tracked a gambler’s net win/loss across 8 sessions. Shocking resul
 
 ## Step 1 — sample means (calmly)
 
+Formula if your wondering:
+
+$$
+\begin{aligned}
+    \mu = \frac{1}{n} \sum_{i=1}^n X_i \\
+    \text{or} \\
+    \mu = \frac{\sum x_i}{n}
+\end{aligned}
+$$
+
 Sum of $x$ is $1+2+\dots+8 = 36$, so
 $$\bar{x} = \frac{36}{8} = 4.5.$$
 Sum of $y$ is $-5-2+0+3+1+4+6+5 = 12$, so
@@ -34,6 +44,26 @@ Compute numerator and denominator explicitly (yes, we actually compute):
 - Numerator: $\sum (x_i-\bar{x})(y_i-\bar{y}) = 60$.
 - Denominator: $\sum (x_i-\bar{x})^2 = 42$.
 
+Plugging:
+
+$$
+\begin{aligned}
+\beta_1 =
+\frac{
+(1-4.5)(-5-1.5) +
+(2-4.5)(-2-1.5) +
+(3-4.5)(0-1.5) +
+(4-4.5)(3-1.5) +
+(5-4.5)(1-1.5) +
+(6-4.5)(4-1.5) +
+(7-4.5)(6-1.5) +
+(8-4.5)(5-1.5)
+}{
+(1-4.5)^2 + (2-4.5)^2 + (3-4.5)^2 + (4-4.5)^2 + (5-4.5)^2 + (6-4.5)^2 + (7-4.5)^2 + (8-4.5)^2
+}
+\end{aligned}
+$$
+
 So
 $$
 \beta_1 = \frac{60}{42} = \frac{10}{7} \approx 1.428571\ldots
@@ -43,11 +73,23 @@ $$
 
 Intercept $\beta_0$ is
 $$
-\beta_0 = \bar{y} - \beta_1 \bar{x} = 1.5 - \frac{10}{7}\cdot 4.5.
+\begin{aligned}
+\beta_0 = \bar{y} - \beta_1 \bar{x} \\
+\beta_0 = 1.5 - \frac{10}{7}(4.5).
+\end{aligned}
 $$
+
+If u prefer decimals:
+
+$$
+\begin{aligned}
+\beta_0 = 1.5 - 1.428571(4.5).
+\end{aligned}
+$$
+
 Numerically,
 $$
-\beta_0 = 1.5 - \frac{45}{7} = \frac{21}{14} - \frac{90}{14} = -\frac{69}{14} \approx -4.928571\ldots
+\beta_0 = 1.5 - \frac{45}{7} = \frac{21}{14} - \frac{90}{14} = -\frac{69}{14} \approx -4.9285695\ldots
 $$
 
 ### Final fitted line (the glorious lie)
@@ -58,7 +100,7 @@ $$
 
 If decimals are more comforting:
 $$
-\hat{y} \approx -4.928571 + 1.428571x.
+\hat{y} \approx -4.9285695 + 1.428571x.
 $$
 
 ### Predictions (so you can point at numbers and feel smart)
